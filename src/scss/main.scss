@@ -1,0 +1,18 @@
+@import '~normalize.css';
+
+@import 'left-panel.scss';
+@import 'right-panel.scss';
+
+body {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  font-family: Lato, sans-serif;
+}
+
+.container {
+  border: 1px solid black;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}

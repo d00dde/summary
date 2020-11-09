@@ -1,0 +1,87 @@
+@import '_variables.scss';
+
+.right-panel {
+  background-color: $rightBGColor;
+  width: 58%;
+  min-height: 100vh;
+  .title-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+    padding: 30px 0;
+    background-color: $darkColor;
+    text-align: center;
+    .name {
+      margin: 0;
+      color: $leftBGColor;
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-family: Aleo, sans-serif;
+    }
+    .position {
+      margin: 0;
+      padding-top: 25px;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: $rightBGColor;
+      letter-spacing: 4px;
+    }
+  }
+  @include block(90%, 70%);
+  .two-tiers-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      display: flex;
+      width: 33%;
+      padding: 10px;
+      box-sizing: border-box;
+      flex-direction: column;
+      h3 {
+        margin: 7px 0;
+        font-size: 1.2rem;
+        font-style: italic;
+        text-align: left;
+        &:after {
+          content: ':';
+        }
+      }
+      .tier-2 {
+        padding: 0;
+        li {
+          font-size: 1rem;
+          font-weight: 700;
+          display: block;
+          width: 100%;
+          padding: 5px;
+          text-align: left;
+          &:before {
+            content: '- ';
+          }
+        }
+      }
+    }
+  }
+  .education-list {
+    list-style: none;
+    li {
+      display: flex;
+      margin: 10px 0;
+      .period {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 25%;
+        font-style: italic;
+      }
+      .course {
+        display: flex;
+        width: 75%;
+      }
+    }
+  }
+}
