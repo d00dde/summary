@@ -1,4 +1,4 @@
-@mixin block($width: 80%, $titleWidth: 80%) {
+@mixin block($width, $titleWidth) {
   .block {
     width: $width;
     padding-left: 20px;

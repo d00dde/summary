@@ -19,6 +19,7 @@ export const data = {
 					'HTML5',
 					'CSS3',
 					'Java Script (ES6+)',
+					'TypeScript',
 				]
 			},
 			{
@@ -98,5 +99,52 @@ export const data = {
 				course: 'Online course \"MERN - Reducing Links from Zero to Deploy (Mongo, Express, React, Node)\"',
 			},
 		]
+	},
+	contactsBlock: {
+		title: 'Contacts',
+		content: [
+			{
+				name: 'Location',
+				value: 'Ukraine, Kryvyi Rig',
+			},
+			{
+				name: 'Tel, viber',
+				value: '+38 (097) 207-45-57',
+			},
+			{
+				name: 'Email',
+				value: 'd48564@gmail.com',
+			},
+			{
+				name: 'Github',
+				value: 'https://github.com/d00dde',
+			},
+			{
+				name: 'Linkedin',
+				value: 'https://www.linkedin.com/in/andrei-lopatko-674b62184',
+			},
+			{
+				name: 'Site',
+				value: 'https://react-dev.ml',
+			},
+		]
+	},
+	languagesBlock: {
+		title: 'Languages',
+		content: [
+			{
+				langName: 'Russian',
+				degree: 'Native',
+			},
+			{
+				langName: 'Ukrainian',
+				degree: 'Native',
+			},
+			{
+				langName: 'English',
+				degree: 'Intermediate',
+			},
+		]
 	}
+
 }

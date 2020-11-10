@@ -2,6 +2,7 @@
 @import '_mixins.scss';
 
 .left-panel {
+  @include block(80%, 80%);
   background-color: $leftBGColor;
   min-height: 100vh;
   width: 42%;
@@ -20,5 +21,26 @@
       object-fit: cover;
     }
   }
-  @include block();
+  .contacts-list {
+    list-style: none;
+    padding: 0;
+    li {
+      display: flex;
+      padding: 10px 0;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      width: 25%;
+      &:after {
+        content: ':';
+        padding-left: 2px;
+      }
+    }
+    .value {
+      display: flex;
+      align-items: center;
+      width: 75%;
+    }
+  }
 }

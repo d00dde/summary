@@ -1,23 +1,23 @@
 import './scss/main.scss';
 import { data } from './data';
 import {
-	createPanel,
-	createTitle,
-	createPortrait,
+	render,
+	createTitleBlock,
+	createPortraitBlock,
 	createTextBlock,
+	createFlatListBlock,
 	createTwoTierListBlock,
-	createEducationBlock,
 } from './templates';
 
 const leftPanel = [];
-leftPanel.push(createPortrait(data.portrait));
+leftPanel.push(createPortraitBlock(data.portrait));
 leftPanel.push(createTextBlock(data.aboutBlock));
+leftPanel.push(createFlatListBlock(data.contactsBlock, 'contacts-list'));
+leftPanel.push(createFlatListBlock(data.languagesBlock, 'languages-list'));
 
 const rightPanel = [];
-rightPanel.push(createTitle(data.titleBlock));
-rightPanel.push(createTwoTierListBlock(data.skillsBlock));
-rightPanel.push(createEducationBlock(data.educationBlock));
+rightPanel.push(createTitleBlock(data.titleBlock));
+rightPanel.push(createTwoTierListBlock(data.skillsBlock, 'skill-list'));
+rightPanel.push(createFlatListBlock(data.educationBlock,'education-list'));
 
-const container = document.querySelector('.container');
-container.insertAdjacentHTML("beforeend", createPanel('left-panel', leftPanel));
-container.insertAdjacentHTML("beforeend", createPanel('right-panel', rightPanel));
+render(leftPanel, rightPanel);

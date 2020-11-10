@@ -1,12 +1,16 @@
-export function createPanel(className, childs) {
+function createPanel(className, childs) {
 	return `
 		<div class="${className}">
 			${childs.join('')}
 		</div>
-
 	`;
 }
-export function createTitle({name, position}) {
+export function render (leftPanel, rightPanel) {
+	const container = document.querySelector('.container');
+	container.insertAdjacentHTML("beforeend", createPanel('left-panel', leftPanel));
+	container.insertAdjacentHTML("beforeend", createPanel('right-panel', rightPanel));
+}
+export function createTitleBlock({name, position}) {
 	return `
 		<div class="title-block">
 			<h1 class="name">${name}</h1>
@@ -14,7 +18,7 @@ export function createTitle({name, position}) {
 		</div>
 	`;
 }
-export function createPortrait({src}) {
+export function createPortraitBlock({src}) {
 	return `
 		<div class="portrait-wrapper">
 			<img src="${src}" alt="portrait" class="portrait">
@@ -29,42 +33,41 @@ export function createTextBlock({title, content}) {
 		</div>
 	`;
 }
-function createList (title, content, type){
+export function createFlatListBlock ({title, content}, className){
+	const list = content.map(createListItem).join('')
 	return `
 	<div class="block">
 		<h2 class="block-title">${title}</h2>
-		<ul class="${type}">
-			${content}
+		<ul class="${className}">
+			${list}
 		</ul>
 	</div>
 `;
 }
-function createListItem (item) {
-	return `<li>${item}</li>`;
-}
-export function createTwoTierListBlock ({title, content}) {
+
+export function createTwoTierListBlock ({title, content}, className) {
 	let items = [];
 	content.forEach((group) => {
 		items.push(`
-			<li>
-				<h3>${group.subtitle}</h3>
-				<ul class="tier-2">
-					${group.items.map(createListItem).join('')}
-				</ul>
-			</li>
+			<h3>${group.subtitle}</h3>
+			<ul class="tier-2">
+				${group.items.map(createListItem).join('')}
+			</ul>
 		`);
 	});
-	return createList(title, items.join(''), 'two-tiers-list');
+	return createFlatListBlock({title, content: items}, className);
 }
 
-function createEducationItem ({period, course}) {
+function createListItem (item) {
+	if(typeof item !== 'object') {
+		return `<li>${item}</li>`;
+	}
+	const content = Object.keys(item).map((key) => {
+		return `<span class="${key}">${item[key]}</span>`;
+	}).join('');
 	return `
 		<li>
-			<span class="period">${period}</span>
-			<span class="course">${course}</span>
+			${content}
 		</li>
 	`;
-}
-export function createEducationBlock({title, content}) {
-	return createList(title, content.map(createEducationItem).join(''), 'education-list');
 }

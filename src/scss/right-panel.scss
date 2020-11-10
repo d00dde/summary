@@ -1,6 +1,7 @@
 @import '_variables.scss';
 
 .right-panel {
+  @include block(90%, 70%);
   background-color: $rightBGColor;
   width: 58%;
   min-height: 100vh;
@@ -30,8 +31,8 @@
       letter-spacing: 4px;
     }
   }
-  @include block(90%, 70%);
-  .two-tiers-list {
+
+  .skill-list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
