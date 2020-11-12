@@ -1,14 +1,19 @@
 export const data = {
+	fonts: {
+		serif: 'Aleo, serif',
+		sansSerif: 'Lato, sans-serif',
+	},
 	titleBlock: {
 		name: 'Andrey Lopatko',
 		position: 'Frontend developer && React developer',
 	},
 	portrait: {
-		src: 'src/images/stockphoto.jpg',
+		src: 'src/images/image.jpeg',
+		alt: 'portrait',
 	},
 	aboutBlock: {
 		title: 'About me',
-		content: 'I am developing of applications and sites using React and related technologies (Router, Redux, Thunk, Firebase). I know such programming languages ​​as C ++ and Java. I am interested in computer science in general, I understand the algorithms and design patterns.',
+		content: 'I am developing apps and websites using React and related technologies (such as Router, Redux, Thunk, etc.). At a basic level, I know backend development technologies (express, Next.js) and React Native. Familiar with Java Script application testing technologies. I\'m familiar with C ++ and Java, and generally interested in computer science. I know algorithms and design patterns.',
 	},
 	skillsBlock: {
 		title: 'Skills',
@@ -144,7 +149,21 @@ export const data = {
 				langName: 'English',
 				degree: 'Intermediate',
 			},
-		]
+		],
+	},
+	experienceBlock : {
+		title: 'Experience',
+		content: [
+			'Personal website development. Used technologies: React, Router, Firebase, Github pages',
+			'Development of an application that implements integration of browser chat on a web socket with Telegram via a heroku server. Used technologies: node.js, express, web socket, telegram API, native JS',
+			'Test execution of React + Redux developer. Used technologies: React, Redux, Styled Components, HTML5, Intersection Observer',
+			'Work on a training project in which a REST API server is created on express and a client application on React interacting with the server. The server has user registration and authorization using the JVT token, a remote MongoDB database is connected to the server. Used technologies: React, Redux, REST API, Express, JVT, MongoDB API',
+			'Test task for JS developer position. Used technologies: React, Google maps API',
+			'Developing an application that displays a list of "New Mail" branches in a selected city. If you select a branch, it displays detailed information and a location on the map. Used technologies: React, Google Maps API, New Mail API, Redux',
+			'Creating a pet-application that implements, in addition to the basic functionality, registration and authorization on the server, separation of user rights, change of application language. Used technologies: React, REST API',
+		],
+	},
+	experienceFootnote: {
+		value: 'All projects can be found in https://github.com/d00dde or https://react-dev.ml',
 	}
-
 }

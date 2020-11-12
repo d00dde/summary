@@ -8,10 +8,31 @@
       background-color: $darkColor;
       color: $leftBGColor;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
     }
-    p {
-      margin-left: 15px;
+  }
+}
+@mixin list($delim: '', $style: normal) {
+  .tier-1 {
+    list-style: none;
+    li {
+      display: flex;
+      margin: 10px 0;
+    }
+    span:nth-child(1) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-style: $style;
+      width: 25%;
+      &:after {
+        content: $delim;
+        padding-left: 2px;
+      }
+    }
+    span:nth-child(2) {
+      display: flex;
+      width: 75%;
     }
   }
 }

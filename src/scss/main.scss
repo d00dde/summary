@@ -7,12 +7,22 @@ body {
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
-  font-family: Lato, sans-serif;
+  position: relative;
 }
 
 .container {
   border: 1px solid black;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
+}
+.switch-lang {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-style: italic;
+  text-transform: uppercase;
 }

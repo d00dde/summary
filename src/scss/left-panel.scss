@@ -15,32 +15,30 @@
     align-items: center;
     height: 400px;
     .portrait {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: 0px -45px;
+    }
+  }
+  .about-block {
+    p {
+      margin-left: 15px;
+      font-size: 1.3rem;
+      line-height: 30px;
     }
   }
   .contacts-list {
-    list-style: none;
-    padding: 0;
-    li {
-      display: flex;
-      padding: 10px 0;
+    @include list(':', italic);
+    ul {
+      padding: 0;
     }
-    .name {
-      display: flex;
-      align-items: center;
-      width: 25%;
-      &:after {
-        content: ':';
-        padding-left: 2px;
-      }
-    }
-    .value {
-      display: flex;
-      align-items: center;
-      width: 75%;
+  }
+  .languages-list {
+    @include list(':', italic);
+    ul {
+      padding: 0;
     }
   }
 }

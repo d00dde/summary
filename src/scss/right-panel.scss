@@ -20,7 +20,6 @@
       font-size: 3.5rem;
       letter-spacing: 4px;
       text-transform: uppercase;
-      font-family: Aleo, sans-serif;
     }
     .position {
       margin: 0;
@@ -33,56 +32,68 @@
   }
 
   .skill-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    li {
+    .tier-1 {
+      list-style: none;
       display: flex;
-      width: 33%;
-      padding: 10px;
-      box-sizing: border-box;
-      flex-direction: column;
-      h3 {
-        margin: 7px 0;
-        font-size: 1.2rem;
-        font-style: italic;
-        text-align: left;
-        &:after {
-          content: ':';
-        }
-      }
-      .tier-2 {
-        padding: 0;
-        li {
-          font-size: 1rem;
-          font-weight: 700;
-          display: block;
-          width: 100%;
-          padding: 5px;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        width: 33%;
+        padding: 10px;
+        box-sizing: border-box;
+        flex-direction: column;
+        h3 {
+          margin: 7px 0;
+          font-size: 1.2rem;
+          font-style: italic;
           text-align: left;
-          &:before {
-            content: '- ';
+          &:after {
+            content: ':';
+          }
+        }
+        .tier-2 {
+          padding: 0;
+          li {
+            font-size: 1rem;
+            font-weight: 700;
+            display: block;
+            width: 100%;
+            padding: 5px;
+            text-align: left;
+            &:before {
+              content: '- ';
+            }
           }
         }
       }
     }
   }
   .education-list {
-    list-style: none;
+    @include list('', italic);
+  }
+  .experience-list {
+    @include list('', italic);
     li {
-      display: flex;
-      margin: 10px 0;
-      .period {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 25%;
-        font-style: italic;
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: -35px;
+        content: '';
+        background-image: url('/src/images/briefcase.ico');
+        background-size: cover;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
       }
-      .course {
-        display: flex;
-        width: 75%;
-      }
+    }
+  }
+  .experience-footnote {
+    text-align: center;
+    padding-bottom: 30px;
+    color: $footnoteColor;
+    &:before {
+      content: '*';
     }
   }
 }
